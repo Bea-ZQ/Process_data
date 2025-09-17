@@ -39,8 +39,12 @@ def get_local_filepath_ECT(date, local_root_dir, probe, instrument, level = '3')
 
     local_dir = dd_ect.get_local_dir_ECT(date, local_root_dir, probe, instrument, level)
     # link de interés: https://docs.python.org/es/3/library/glob.html
-    filepath = glob.glob(local_dir + filename)[0]
+#    print(glob.glob(local_dir + filename))
+    try:
+        filepath = glob.glob(local_dir + filename)[0]
 #    print('LOCAL PATH', filepath)
+    except:
+        filepath = 0
 
     return filepath
 
@@ -265,7 +269,9 @@ def load_CDFfiles_ECT(start_date, end_date, local_root_dir, relevant_var, rename
 
         for date in date_array:
             filepath = get_local_filepath_ECT(date, local_root_dir, p, instrument, '3')
-
+            if filepath == 0:
+                print('No file in local')
+                continue
             ect, fedu = read_CDFfile_ECT(filepath, key, relevant_var, rename_mapping)
 
             ect_df, ect_metadata = ect
