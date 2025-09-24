@@ -7,22 +7,12 @@ import pathlib
 from Download_data import download_emfisis as dd_emf
 import os
 import matplotlib.pyplot as plt
-#  Data is not scientifically valid when the calibration is active
-# METtime is corrected s/c clock time marking start of measurement.
-# Bx, By, Bz, Bmag are magnetic field values in corresponding coordinate system.
-# Bmag is average of all underlying |B| values within the averaging interval.
-# Brms is the total standard deviation for measurements within the averaging interval.
-# delta, lambda are latitude and longitude of the field vector  where (0,0) is the positive Bx direction.
-# X, Y, Z is spacecraft location in corresponding coordinate system.
-# Badpoint value for fill or otherwise removed measurements is -99999.9 
-# ir is range (0-3), iC is Calibration current (1=on), iM is MAG data invalid (iM=1), and if is fill (if=1) flags
-#calstate, magInvalid y magFill son flags de calidad indican si el dato es valido (0) o no (1), ya sea por estar calibrando, otros errores o es un dato de relleno
 
 
 def get_local_filepath_EMFISIS(date, local_root_dir, probe,level = '3',coordinates = 'geo', interval= '4'):
 
     '''
-    Constructs and retrieves the full local file path for RBSP ECT data files
+    Constructs and retrieves the full local file path for RBSP EMFISIS data files
     based on the provided date, probe, instrument, and data level. It searches
     within the appropriate local directory and uses a wildcard pattern (*) to
     match versions of the file and retrieves the first file path that matches
@@ -109,7 +99,7 @@ def filter_metadata_EMFISIS(original_metadata):
 def read_CDFfile_EMFISIS(cdf_path, relevant_var, rename_mapping):
 
     '''
-    Load and parse a RBSP ECT CDF file.
+    Load and parse a RBSP EMFISIS CDF file.
 
     This function reads and processes a CDF file containing data from the RBSP
     EMFISIS suite. It extracts relevant variables, metadata, and key flux data arrays
@@ -270,4 +260,5 @@ def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, re
     print('----')
 
     return output
+
  
