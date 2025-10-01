@@ -1,2 +1,0 @@
-from Process_data.process_omni import read_CDFfile_OMNI, load_CDFfiles_OMNI
-from Process_data.process_ect import read_CDFfile_ECT, load_CDFfiles_ECT

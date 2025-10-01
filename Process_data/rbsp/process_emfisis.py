@@ -4,7 +4,7 @@ import datetime
 import numpy as np
 import glob
 import pathlib
-from Download_data import download_emfisis as dd_emf
+from Download_data.rbsp import download_emfisis as dd_emf
 import os
 import matplotlib.pyplot as plt
 
@@ -153,7 +153,7 @@ def read_CDFfile_EMFISIS(cdf_path, relevant_var, rename_mapping):
             dict_cdf[renamed_key+'-x1'] = cdf[var][:,0]
             dict_cdf[renamed_key+'-x2'] = cdf[var][:,1]
             dict_cdf[renamed_key+'-x3'] = cdf[var][:,2]
-            
+
         else:
             dict_cdf_metadata[renamed_key] = filtered_metadata
             dict_cdf[renamed_key] = cdf[var]
@@ -175,7 +175,7 @@ def clean_CDFfile_EMFISIS(df,interp=False):
     #    -it's an invalid value
     # All of this criteria are taken according to the meta data
 
-    
+
    cols_to_check = ['did fill?', 'calibrating?', 'is valid?']
 
 # Collect all columns ending with "x1", "x2", or "x3"
@@ -192,7 +192,7 @@ def clean_CDFfile_EMFISIS(df,interp=False):
        df_clean = df.interpolate(axis = 0)
        return df_clean
    return df
-   
+
 
 
 def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, rename_mapping, probe, level = '3',Interpol = False):
@@ -242,7 +242,7 @@ def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, re
             emfisis= read_CDFfile_EMFISIS(filepath, relevant_var, rename_mapping)
 
             emfisis_df, emfisis_metadata = emfisis
-            
+
             emfisis_df_clean = clean_CDFfile_EMFISIS(emfisis_df,Interpol)
 
             if flag:
@@ -260,5 +260,3 @@ def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, re
     print('----')
 
     return output
-
- 

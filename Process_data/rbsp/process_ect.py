@@ -3,7 +3,7 @@ import cdflib
 import datetime
 import numpy as np
 import glob
-from Download_data import download_ect as dd_ect
+from Download_data.rbsp import download_ect as dd_ect
 
 
 ###################### Function to obtain local filenames ##########################

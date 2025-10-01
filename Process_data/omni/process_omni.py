@@ -1,4 +1,4 @@
-from Download_data import download_omni as dd_omni
+from Download_data.omni import download_omni as dd_omni
 import pandas as pd
 import cdflib
 import datetime
