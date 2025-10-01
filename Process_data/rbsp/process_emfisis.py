@@ -219,7 +219,6 @@ def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, re
                 2. emfisis_metadata (dict): Metadata for the scalar parameters in emfisis_info.
     '''
 
-    print('\nPrint para ver si efectivamente se actualiza el paquete Proccess_data EMFISIS V3')
 
     date_array = pd.date_range(start=start_date, end=end_date, freq='D')
     output = []
@@ -234,7 +233,7 @@ def load_CDFfiles_EMFISIS(start_date, end_date, local_root_dir, relevant_var, re
     for p in probes_list:
         f = []
         flag = True
-        print(p)
+#        print(p)
 
         for date in date_array:
             filepath = get_local_filepath_EMFISIS(date, local_root_dir, p,'3')

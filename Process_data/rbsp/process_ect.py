@@ -249,7 +249,6 @@ def load_CDFfiles_ECT(start_date, end_date, local_root_dir, relevant_var, rename
                 4. fedu_metadata (dict): Metadata for the multi-dimensional FEDU data.
     '''
 
-    print('\nPrint para ver si efectivamente se actualiza el paquete Proccess_data ECT V3')
     print(f'\nPROCESSING ECT-{instrument.upper()} INSTRUMENT DATA')
 
     date_array = pd.date_range(start=start_date, end=end_date, freq='D')
@@ -265,7 +264,7 @@ def load_CDFfiles_ECT(start_date, end_date, local_root_dir, relevant_var, rename
     for p in probes_list:
         f = []
         flag = True
-        print(p)
+#        print(p)
 
         for date in date_array:
             filepath = get_local_filepath_ECT(date, local_root_dir, p, instrument, '3')

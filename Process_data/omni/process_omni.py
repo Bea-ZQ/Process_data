@@ -163,7 +163,6 @@ def load_CDFfiles_OMNI(start_date, end_date, local_root_dir, relevant_var, renam
     '''
 
     print(f'\nPROCESSING OMNI {res.upper()} {type.upper()} DATA')
-    print('\nPrint para ver si efectivamente se actualiza el paquete Proccess_data OMNI V3')
 
     if res != "1h":
 #        print(res, ' resolution')
