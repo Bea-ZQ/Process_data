@@ -6,6 +6,14 @@ import glob
 from Download_data.rbsp import download_ect as dd_ect
 
 
+"""
+Author: BZQ
+Email: beatriz.zenteno@usach.cl
+Adapted from original codes by Victor Pinto
+Date: Dic 2024
+"""
+
+
 ###################### Function to obtain local filenames ##########################
 
 def get_local_filepath_ECT(date, local_root_dir, probe, instrument, level = '3'):

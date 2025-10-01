@@ -9,6 +9,13 @@ import os
 import matplotlib.pyplot as plt
 
 
+"""
+Author: Felipe Darmazo
+Email: felipe.darmazo@ug.uchile.cl
+Adapted from original codes by Victor Pinto
+Date: Sept 2025
+"""
+
 def get_local_filepath_EMFISIS(date, local_root_dir, probe,level = '3',coordinates = 'geo', interval= '4'):
 
     '''

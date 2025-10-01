@@ -5,6 +5,15 @@ import datetime
 import numpy as np
 
 
+"""
+Author: BZQ
+Email: beatriz.zenteno@usach.cl
+Adapted from original codes by Victor Pinto
+Date: Dic 2024
+"""
+
+
+
 ############ Functions to read and process cdf files for omni data #############
 
 def filter_metadata_OMNI(original_metadata):
